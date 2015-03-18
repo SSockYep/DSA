@@ -1,24 +1,24 @@
-﻿빌드 시작: 2015-03-18 오후 11:50:02
-     1>2 노드의 "C:\Users\SSOCKYEP\Documents\Visual Studio 2013\Projects\Assignment1\Assignment1\Assignment1.vcxproj" 프로젝트(Build 대상)입니다.
+﻿빌드 시작: 2015-03-19 오전 12:16:59
+     1>2 노드의 "C:\Users\SSOCKYEP\Documents\GitHub\DSA\Assignment1greenlight\Assignment1\Assignment1.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\ssockyep\documents\visual studio 2013\projects\assignment1\assignment1\main.cpp(63): warning C4244: '인수' : 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-     1>c:\users\ssockyep\documents\visual studio 2013\projects\assignment1\assignment1\main.cpp(65): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ssockyep\documents\github\dsa\assignment1greenlight\assignment1\main.cpp(65): warning C4244: '인수' : 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>c:\users\ssockyep\documents\github\dsa\assignment1greenlight\assignment1\main.cpp(67): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 'scanf' 선언을 참조하십시오.
-     1>c:\users\ssockyep\documents\visual studio 2013\projects\assignment1\assignment1\main.cpp(67): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ssockyep\documents\github\dsa\assignment1greenlight\assignment1\main.cpp(69): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 'scanf' 선언을 참조하십시오.
-     1>c:\users\ssockyep\documents\visual studio 2013\projects\assignment1\assignment1\main.cpp(85): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ssockyep\documents\github\dsa\assignment1greenlight\assignment1\main.cpp(95): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' 선언을 참조하십시오.
-     1>c:\users\ssockyep\documents\visual studio 2013\projects\assignment1\assignment1\main.cpp(92): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ssockyep\documents\github\dsa\assignment1greenlight\assignment1\main.cpp(103): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 'fopen' 선언을 참조하십시오.
-     1>c:\users\ssockyep\documents\visual studio 2013\projects\assignment1\assignment1\main.cpp(99): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ssockyep\documents\github\dsa\assignment1greenlight\assignment1\main.cpp(110): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' 선언을 참조하십시오.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\SSOCKYEP\Documents\Visual Studio 2013\Projects\Assignment1\Debug\Assignment1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\SSOCKYEP\Documents\Visual Studio 2013\Projects\Assignment1\Debug\Assignment1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\SSOCKYEP\Documents\Visual Studio 2013\Projects\Assignment1\Debug\Assignment1.lib" /MACHINE:X86 Debug\main.obj
-         Assignment1.vcxproj -> C:\Users\SSOCKYEP\Documents\Visual Studio 2013\Projects\Assignment1\Debug\Assignment1.exe
-     1>"C:\Users\SSOCKYEP\Documents\Visual Studio 2013\Projects\Assignment1\Assignment1\Assignment1.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\SSOCKYEP\Documents\GitHub\DSA\Assignment1greenlight\Debug\Assignment1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\SSOCKYEP\Documents\GitHub\DSA\Assignment1greenlight\Debug\Assignment1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\SSOCKYEP\Documents\GitHub\DSA\Assignment1greenlight\Debug\Assignment1.lib" /MACHINE:X86 Debug\main.obj
+         Assignment1.vcxproj -> C:\Users\SSOCKYEP\Documents\GitHub\DSA\Assignment1greenlight\Debug\Assignment1.exe
+     1>"C:\Users\SSOCKYEP\Documents\GitHub\DSA\Assignment1greenlight\Assignment1\Assignment1.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:00.93
+경과 시간: 00:00:00.82
