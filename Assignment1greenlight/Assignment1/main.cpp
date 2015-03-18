@@ -26,6 +26,7 @@ int is_greenlight(panel p, story s)
 	{
 		for (j = 0; j < 3; j++)
 		{
+			//사연에 패널이 반응하는 keyword가 있는지 체크
 			if (strstr(s.sentence[i], p.keyword[j]) != NULL)
 			{
 				check[j] = 1;
@@ -38,6 +39,7 @@ int is_greenlight(panel p, story s)
 		return 0;
 }
 
+//구조체 story에 있는 문장을 출력하는 함수
 void print_sentences(story s)
 {
 	int i = 0;
@@ -52,11 +54,11 @@ int main()
 {
 	FILE *fp;
 	char keywords[7][5] = { "like", "talk", "meet", "call", "gift", "text", "kind" };
-	char filename[11] = "story0.txt"; //파일 이름 '0'부분은 뒤에서 수정
-	char inputword[255];
-	int random_keyword, i, j;
+	char filename[11] = "story0.txt"; //파일 이름, '0'부분은 뒤에서 수정
+	char inputword[255]; //파일에서 읽은 문장을 임시로 저장
+	int random_keyword, i, j; //random_keyword: keywords중에서 랜덤하게 뽑기 위함. i,j: for for loop
 	int panel_num = 0, story_num = 0;
-	int check_repeat[2] = { -1, -1 };
+	int check_repeat[2] = { -1, -1 }; //keyword들의 중복 확인용
 	panel* panels;
 	story* stories;
 
@@ -68,27 +70,36 @@ int main()
 
 	panels = (panel*)malloc(panel_num*sizeof panel);
 	stories = (story*)malloc(panel_num*sizeof story);
+
+	//panel이 반응할 단어를 랜덤하게 선택
 	for (i = 0; i < panel_num; i++)
 	{
 		panels[i].id = i;
 		for (j = 0; j < 3; j++)
 		{
+			//중복이 아닐 때까지 계속 반복하여
+			//랜덤하게 단어 선택
 			while (true)
 			{
 				random_keyword = rand() % 7;
 				if (j != 2)
+				{
 					check_repeat[j] = random_keyword;
+				}
 
 				if (check_repeat[j - 1] != random_keyword)
+				{
 					break;
+				}
 			}
 			strcpy(panels[i].keyword[j], keywords[random_keyword]);
 		}
 	}
 
+	//story들을 stories에 저장
 	for (i = 0; i < story_num; i++)
 	{
-		filename[5] = '1' + i;
+		filename[5] = '1' + i; //filename[5]가 '0'부분
 		fp = fopen(filename, "r");
 
 		stories[i].id = i;
@@ -103,6 +114,7 @@ int main()
 		fclose(fp);
 	}
 
+	//그린라이트 여부 확인 후 그에 맞춰서 출력
 	for (i = 0; i < story_num; i++)
 	{
 		printf("Story %d\n", i + 1);
@@ -110,7 +122,7 @@ int main()
 		for (j = 0; j < panel_num; j++)
 		{
 			printf("panel %d: ", j + 1);
-			if (is_greenlight(panels[j], stories[i]))
+			if (is_greenlight(panels[j], stories[i]) == 1)
 				printf("ON\n");
 			else
 				printf("OFF\n");
