@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -17,8 +17,8 @@ typedef struct story
 	unsigned char lines;
 }story;
 
-//ÆĞ³ÎÀÌ ÇÑ »ç¿¬¿¡ ´ëÇØ ÆÇ´Ü
-//±×¸°¶óÀÌÆ®¸é 1, ¾Æ´Ï¸é 0 return
+//íŒ¨ë„ì´ í•œ ì‚¬ì—°ì— ëŒ€í•´ íŒë‹¨
+//ê·¸ë¦°ë¼ì´íŠ¸ë©´ 1, ì•„ë‹ˆë©´ 0 return
 int is_greenlight(panel p, story s)
 {
 	int i, j, check[3] = { 0, 0, 0 };
@@ -26,7 +26,7 @@ int is_greenlight(panel p, story s)
 	{
 		for (j = 0; j < 3; j++)
 		{
-			//»ç¿¬¿¡ ÆĞ³ÎÀÌ ¹İÀÀÇÏ´Â keyword°¡ ÀÖ´ÂÁö Ã¼Å©
+			//ì‚¬ì—°ì— íŒ¨ë„ì´ ë°˜ì‘í•˜ëŠ” keywordê°€ ìˆëŠ”ì§€ ì²´í¬
 			if (strstr(s.sentence[i], p.keyword[j]) != NULL)
 			{
 				check[j] = 1;
@@ -39,7 +39,7 @@ int is_greenlight(panel p, story s)
 		return 0;
 }
 
-//±¸Á¶Ã¼ story¿¡ ÀÖ´Â ¹®ÀåÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö
+//êµ¬ì¡°ì²´ storyì— ìˆëŠ” ë¬¸ì¥ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 void print_sentences(story s)
 {
 	int i = 0;
@@ -54,11 +54,11 @@ int main()
 {
 	FILE *fp;
 	char keywords[7][5] = { "like", "talk", "meet", "call", "gift", "text", "kind" };
-	char filename[11] = "story0.txt"; //ÆÄÀÏ ÀÌ¸§, '0'ºÎºĞÀº µÚ¿¡¼­ ¼öÁ¤
-	char inputword[255]; //ÆÄÀÏ¿¡¼­ ÀĞÀº ¹®ÀåÀ» ÀÓ½Ã·Î ÀúÀå
-	int random_keyword, i, j; //random_keyword: keywordsÁß¿¡¼­ ·£´ıÇÏ°Ô »Ì±â À§ÇÔ. i,j: for for loop
+	char filename[11] = "story0.txt"; //íŒŒì¼ ì´ë¦„, '0'ë¶€ë¶„ì€ ë’¤ì—ì„œ ìˆ˜ì •
+	char inputword[255]; //íŒŒì¼ì—ì„œ ì½ì€ ë¬¸ì¥ì„ ì„ì‹œë¡œ ì €ì¥
+	int random_keyword, i, j; //random_keyword: keywordsì¤‘ì—ì„œ ëœë¤í•˜ê²Œ ë½‘ê¸° ìœ„í•¨. i,j: for for loop
 	int panel_num = 0, story_num = 0;
-	int check_repeat[2] = { -1, -1 }; //keywordµéÀÇ Áßº¹ È®ÀÎ¿ë
+	int check_repeat[2] = { -1, -1 }; //keywordë“¤ì˜ ì¤‘ë³µ í™•ì¸ìš©
 	panel* panels;
 	story* stories;
 
@@ -71,14 +71,14 @@ int main()
 	panels = (panel*)malloc(panel_num*sizeof panel);
 	stories = (story*)malloc(panel_num*sizeof story);
 
-	//panelÀÌ ¹İÀÀÇÒ ´Ü¾î¸¦ ·£´ıÇÏ°Ô ¼±ÅÃ
+	//panelì´ ë°˜ì‘í•  ë‹¨ì–´ë¥¼ ëœë¤í•˜ê²Œ ì„ íƒ
 	for (i = 0; i < panel_num; i++)
 	{
 		panels[i].id = i;
 		for (j = 0; j < 3; j++)
 		{
-			//Áßº¹ÀÌ ¾Æ´Ò ¶§±îÁö °è¼Ó ¹İº¹ÇÏ¿©
-			//·£´ıÇÏ°Ô ´Ü¾î ¼±ÅÃ
+			//ì¤‘ë³µì´ ì•„ë‹ ë•Œê¹Œì§€ ê³„ì† ë°˜ë³µí•˜ì—¬
+			//ëœë¤í•˜ê²Œ ë‹¨ì–´ ì„ íƒ
 			while (true)
 			{
 				random_keyword = rand() % 7;
@@ -96,10 +96,10 @@ int main()
 		}
 	}
 
-	//storyµéÀ» stories¿¡ ÀúÀå
+	//storyë“¤ì„ storiesì— ì €ì¥
 	for (i = 0; i < story_num; i++)
 	{
-		filename[5] = '1' + i; //filename[5]°¡ '0'ºÎºĞ
+		filename[5] = '1' + i; //filename[5]ê°€ '0'ë¶€ë¶„
 		fp = fopen(filename, "r");
 
 		stories[i].id = i;
@@ -114,7 +114,7 @@ int main()
 		fclose(fp);
 	}
 
-	//±×¸°¶óÀÌÆ® ¿©ºÎ È®ÀÎ ÈÄ ±×¿¡ ¸ÂÃç¼­ Ãâ·Â
+	//ê·¸ë¦°ë¼ì´íŠ¸ ì—¬ë¶€ í™•ì¸ í›„ ê·¸ì— ë§ì¶°ì„œ ì¶œë ¥
 	for (i = 0; i < story_num; i++)
 	{
 		printf("Story %d\n", i + 1);
